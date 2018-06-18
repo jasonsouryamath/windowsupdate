@@ -1,0 +1,39 @@
+---
+- hosts: win
+  vars:
+      state: absent
+  tasks:
+    - win_updates:
+      category_names:
+      - SecurityUpdates
+      - CriticalUpdates
+      - UpdateRollups
+      tags:
+      - never
+    - name: Install firefox
+      win_chocolatey:
+        name: firefox
+        state: "{{ state }}"
+      tags:
+      - installation
+    - name: Install googlechrome
+      win_chocolatey:
+        name: googlechrome
+        state: "{{ state }}"
+      tags:
+      - installation
+    - name: adobereader
+      win_chocolatey:
+        name: adobereader
+        state: "{{ state }}"
+      tags:
+      - installation
+    - name: adobe flash player
+      win_chocolatey:
+        name: flashplayerplugin
+        state: "{{ state }}"
+      tags:
+      - installation
+    - name: adobe flash player
+      win_chocolatey:
+        name: notepadplusplus.install
