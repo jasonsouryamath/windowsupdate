@@ -37,3 +37,4 @@
     - name: adobe flash player
       win_chocolatey:
         name: notepadplusplus.install
+        state: "{{ state }}"
