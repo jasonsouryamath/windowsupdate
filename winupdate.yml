@@ -1,7 +1,7 @@
 ---
 - hosts: win
   vars:
-      state: absent
+      state: latest
   tasks:
     - win_updates:
       category_names:
